@@ -9,7 +9,7 @@ const bookingSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, 'Phone number zaroori hai'],
-    match: [/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$/, 'Sahi phone number likhen'] // Pakistan format check
+    
   },
 
   email: {
