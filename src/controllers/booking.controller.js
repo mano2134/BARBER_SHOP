@@ -28,16 +28,7 @@ const mongoose = require("mongoose");
             }
 
             // --- 3. SPECIFIC DATE OFF CHECK ---
-            const isShopClosedOnDate = shop.offDates.some(offDate =>
-                new Date(offDate).toDateString() === bookingDate.toDateString()
-            );
-
-            if (isShopClosedOnDate) {
-                return res.status(400).json({
-                    success: false,
-                    message: `Maaf kijiye, is din ${bookingDate.toDateString()} shop band hogi. Baraye meherbani koi aur din select karein`
-                });
-            }
+            
 
             // --- 4. ADVANCE BOOKING LIMIT (1 Week) ---
             const oneWeekLimit = new Date();
